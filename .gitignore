@@ -1,0 +1,6 @@
+*.txt
+*.json
+*.hi
+*.o
+*.sh
+/compiled/
