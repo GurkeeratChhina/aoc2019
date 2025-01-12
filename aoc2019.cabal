@@ -1,0 +1,17 @@
+cabal-version:      3.0
+name:               aoc2019
+version:            0.1.0.0
+
+executable d1
+    hs-source-dirs:   solutions
+    main-is:          d1.hs
+    build-depends:
+        base ^>=4.17.2.1
+
+executable d2
+    hs-source-dirs:   solutions
+    main-is:          d2.hs
+    build-depends:
+        base ^>=4.17.2.1,
+        split ^>=0.2.5
+    
