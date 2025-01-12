@@ -2,16 +2,20 @@ cabal-version:      3.0
 name:               aoc2019
 version:            0.1.0.0
 
-executable d1
+common warnings
+    ghc-options: -Wall
     hs-source-dirs:   solutions
+    default-language: Haskell2010
+
+executable d1
+    import:           warnings
     main-is:          d1.hs
     build-depends:
         base ^>=4.17.2.1
 
 executable d2
-    hs-source-dirs:   solutions
+    import:           warnings
     main-is:          d2.hs
     build-depends:
         base ^>=4.17.2.1,
-        split ^>=0.2.5
-    
+        split ^>=0.2.5,

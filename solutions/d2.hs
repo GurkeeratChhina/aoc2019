@@ -1,6 +1,6 @@
 module Main where
 
-import Data.List.Split
+import Data.List.Split ( splitOn )
 
 filename :: String
 filename = "data/d2.txt"
@@ -20,7 +20,7 @@ instr index l
   | otherwise = [0]
 
 replace :: Int -> a -> [a] -> [a]
-replace index value l = x ++ value:y where (x, _:y) = splitAt index l
+replace index value l = x ++ value:tail y where (x, y) = splitAt index l
 
 run :: Int -> Int -> [Int] -> Int
 run noun verb = head . instr 0 . replace 1 noun . replace 2 verb
