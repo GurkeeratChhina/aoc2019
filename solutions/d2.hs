@@ -1,6 +1,9 @@
 module Main where
 
 import Data.List.Split ( splitOn )
+import System.TimeIt ( timeItT )
+import Text.Printf ( printf )
+
 
 filename :: String
 filename = "data/d2.txt"
@@ -32,8 +35,8 @@ part2 :: IO Int
 part2 = part2' 0 <$> parse
 
 main :: IO ()
-main = do
-    putStr "The answer to Day 2 part 1 is: "
-    print =<< part1
-    putStr "The answer to Day 2 part 2 is: "
-    print =<< part2
+main = do 
+    (time1, result1) <- timeItT part1
+    printf "The answer to Day 1 part 2 is: %-10d, calculated in: %.6f ms\n" result1 (time1*1000)
+    (time2, result2) <- timeItT part2
+    printf "The answer to Day 1 part 2 is: %-10d, calculated in: %.6f ms\n" result2 (time2*1000)
