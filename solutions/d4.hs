@@ -8,7 +8,7 @@ filename :: String
 filename = "data/d4.txt"
 
 --adjust depending on structure of input file
-parse :: IO [Int]
+parse :: IO [Integer]
 parse = map read . splitOn "-" <$> readFile filename
 
 part1 :: IO Int
@@ -26,18 +26,19 @@ hasDouble x = (x >= 10) && (hasDouble (x `div` 10) || (x `mod` 10) == ((x `div` 
 validInRange :: Integral a => [a] -> [a]
 validInRange range = filter digitsIncreasing . filter hasDouble $ [(head range)..(last range)]
 
-validInRange' :: Integral a => [a] -> [a]
-validInRange' range = filter digitsIncreasing . filter hasDouble' $ [(head range)..(last range)]
+validInRange' :: [Integer] -> [Integer]
+validInRange' range = filter digitsIncreasing . filter (hasDigitCount 2 10) $ [(head range)..(last range)]
 
-hasDouble' :: Integral t => t -> Bool
-hasDouble' x = 2 `elem` [countOf x n | n <- [0..9]]
+hasDigitCount :: Integer -> Integer -> Integer -> Bool
+hasDigitCount n b x= n `elem` [countOf x d b | d <- [0..(b-1)]]
 
-countOf :: (Num a, Integral t) => t -> t -> a
-countOf x n
-  | x < 10 && x == n = 1
-  | x < 10 && x /= n = 0
-  | x `mod` 10 == n = 1 + countOf (x `div` 10) n
-  | otherwise = countOf (x `div` 10) n
+
+countOf :: Integer -> Integer -> Integer -> Integer
+countOf x d b
+  | x < b && x == d = 1
+  | x < b && x /= d = 0
+  | x `mod` b == d = 1 + countOf (x `div` b) d b
+  | otherwise = countOf (x `div` b) d b
 
 main :: IO ()
 main = do

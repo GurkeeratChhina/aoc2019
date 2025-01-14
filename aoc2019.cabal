@@ -9,6 +9,7 @@ common warnings
     build-depends:
         base ^>=4.17.2.1,
         timeit ^>=2.0,
+        split ^>=0.2.5,
 
 executable d1
     import:           warnings
@@ -18,14 +19,19 @@ executable d1
 executable d2
     import:           warnings
     main-is:          d2.hs
-    build-depends:    split ^>=0.2.5,
+    --build-depends:   
 
 executable d3
     import:           warnings
     main-is:          d3.hs
-    build-depends:    split ^>=0.2.5,
+    --build-depends:
 
 executable d4
     import:           warnings
     main-is:          d4.hs
-    build-depends:    split ^>=0.2.5,
+    --build-depends:
+
+executable d5
+    import:           warnings
+    main-is:          d5.hs
+    --build-depends:
