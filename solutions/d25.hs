@@ -20,6 +20,6 @@ part2 = sum <$> parse
 main :: IO ()
 main = do 
     (time1, result1) <- timeItT part1
-    printf "The answer to Day 25 part 2 is: %-10d, calculated in: %.6f ms\n" result1 (time1*1000)
+    printf "The answer to Day 25 part 1 is: %-10d, calculated in: %.6f ms\n" result1 (time1*1000)
     (time2, result2) <- timeItT part2
     printf "The answer to Day 25 part 2 is: %-10d, calculated in: %.6f ms\n" result2 (time2*1000)
