@@ -44,3 +44,7 @@ executable d6
 executable d7
     import:           warnings
     main-is:          d7.hs
+
+executable d8
+    import:           warnings
+    main-is:          d8.hs
