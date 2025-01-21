@@ -35,3 +35,12 @@ executable d5
     import:           warnings
     main-is:          d5.hs
     --build-depends:
+
+executable d6
+    import:           warnings
+    main-is:          d6.hs
+    build-depends:    containers ^>=0.7,
+
+executable d7
+    import:           warnings
+    main-is:          d7.hs
