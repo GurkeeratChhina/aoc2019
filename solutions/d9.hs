@@ -8,7 +8,6 @@ import qualified Data.Map.Strict as Map
 filename :: String
 filename = "data/d9.txt"
 
--- TODO: replace c (code) with a map from Data.Map
 data State = State {halted :: Bool, i :: Integer, c :: Map.Map Integer Integer, inputs :: [Integer], outputs :: [Integer], relbase:: Integer} deriving (Show)
 
 --adjust depending on structure of input file
@@ -60,7 +59,6 @@ paramMode 2 index l base = Map.findWithDefault 0 (Map.findWithDefault 0 index l 
 paramMode 10 index l _ = Map.findWithDefault 0 index l
 paramMode 12 index l base = Map.findWithDefault 0 index l + base
 paramMode x _ _ _ = x
-
 
 main :: IO ()
 main = do

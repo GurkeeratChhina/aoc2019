@@ -60,3 +60,8 @@ executable d10
     import:           warnings
     main-is:          d10.hs
     build-depends:    containers ^>=0.7,
+
+executable d11
+    import:           warnings
+    main-is:          d11.hs
+    build-depends:    containers ^>=0.7,
